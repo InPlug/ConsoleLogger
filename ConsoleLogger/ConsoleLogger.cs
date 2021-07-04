@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using Vishnu.Interchange;
 
@@ -13,7 +11,8 @@ namespace ConsoleLogger
     /// File: ConsoleLogger.cs
     /// Autor: Erik Nagel
     ///
-    /// 26.07.2013 Erik Nagel: erstellt
+    /// 26.07.2013 Erik Nagel: Erstellt.
+    /// 03.07.2021 Erik Nagel: Überarbeitet.
     /// </remarks>
     public class ConsoleLogger : INodeLogger
     {
@@ -24,15 +23,10 @@ namespace ConsoleLogger
         /// </summary>
         /// <param name="loggerParameters">Spezifische Aufrufparameter oder null.</param>
         /// <param name="treeParameters">Für den gesamten Tree gültige Parameter oder null.</param>
-        /// <param name="treeEvent">Klasse mit Informationen über das Ereignis.</param>
+        /// <param name="treeEvent">Objekt mit Informationen über das Ereignis.</param>
         /// <param name="additionalEventArgs">Enthält z.B. beim Event 'Exception' die zugehörige Exception.</param>
         public void Log(object loggerParameters, TreeParameters treeParameters, TreeEvent treeEvent, object additionalEventArgs)
         {
-            //string logPath = null;
-            //if (loggerParameters != null)
-            //{
-            //  logPath = loggerParameters.ToString();
-            //}
             StringBuilder bigMessage = new StringBuilder(treeEvent.Timestamp.ToString("yyyy-MM-dd HH:mm:ss,ms"));
             bigMessage.Append(" " + treeEvent.Name + ", Thread: " + treeEvent.ThreadId.ToString());
             bigMessage.Append(", Knoten: " + treeEvent.SourceId + "|" + treeEvent.NodeName);
