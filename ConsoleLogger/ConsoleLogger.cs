@@ -25,7 +25,7 @@ namespace ConsoleLogger
         /// <param name="treeParameters">Für den gesamten Tree gültige Parameter oder null.</param>
         /// <param name="treeEvent">Objekt mit Informationen über das Ereignis.</param>
         /// <param name="additionalEventArgs">Enthält z.B. beim Event 'Exception' die zugehörige Exception.</param>
-        public void Log(object loggerParameters, TreeParameters treeParameters, TreeEvent treeEvent, object additionalEventArgs)
+        public void Log(object? loggerParameters, TreeParameters? treeParameters, TreeEvent treeEvent, object?additionalEventArgs)
         {
             StringBuilder bigMessage = new StringBuilder(treeEvent.Timestamp.ToString("yyyy-MM-dd HH:mm:ss,ms"));
             bigMessage.Append(" " + treeEvent.Name + ", Thread: " + treeEvent.ThreadId.ToString());

@@ -1,13 +1,12 @@
-﻿using System;
-using Vishnu.Interchange;
+﻿using Vishnu.Interchange;
 
-namespace ConsoleLogger
+namespace ConsoleLoggerDemo
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            ConsoleLogger cl = new ConsoleLogger();
+            ConsoleLogger.ConsoleLogger cl = new();
             cl.Log(null, new TreeParameters("MainTree", null), new TreeEvent("EventName", "SourceId", "SenderId", "NodeName", "NodePath", true, NodeLogicalState.Done, null, null), null);
             Console.WriteLine("Ende mit Enter");
             Console.ReadLine();
