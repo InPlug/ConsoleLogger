@@ -29,7 +29,7 @@ namespace ConsoleLogger
         {
             StringBuilder bigMessage = new StringBuilder(treeEvent.Timestamp.ToString("yyyy-MM-dd HH:mm:ss,ms"));
             bigMessage.Append(" " + treeEvent.Name + ", Thread: " + treeEvent.ThreadId.ToString());
-            bigMessage.Append(", Knoten: " + treeEvent.SourceId + "|" + treeEvent.NodeName);
+            bigMessage.Append(", Element: " + treeEvent.SourceId + "|" + treeEvent.NodeName);
             bigMessage.Append(Environment.NewLine + "           Logical: " + treeEvent.Logical);
             bigMessage.Append(", Status: " + treeEvent.State.ToString());
             Console.WriteLine(bigMessage);
